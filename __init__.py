@@ -52,24 +52,17 @@ try:
         prompt = GetParams("prompt")
         model = GetParams("model")
         result_var = GetParams("result_var")
-
-        # Parámetros opcionales con valores por defecto
-        # Ahora acepta valores entre 0 y 2
         temperature = GetParams("temperature")
-        # Renombrado para coincidir con la API
         max_completion_tokens = GetParams("max_tokens")
         stop_sequence = GetParams("stop_sequence")
-        system_prompt = GetParams("system_prompt")  # Nuevo parámetro
 
         generate_text(
             prompt=prompt,
             model=model,
             result_var=result_var,
             temperature=temperature,
-            # Pasamos el parámetro con el nombre antiguo por compatibilidad
             max_tokens=max_completion_tokens,
             stop_sequence=stop_sequence,
-            system_prompt=system_prompt,  # Pasamos el nuevo parámetro
             SetVar=SetVar,
             PrintException=PrintException
         )

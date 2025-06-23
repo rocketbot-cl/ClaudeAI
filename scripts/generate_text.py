@@ -11,7 +11,6 @@ def generate_text(
     temperature: Optional[Union[float, str]] = None,
     max_tokens: Optional[Union[int, str]] = None,
     stop_sequence: Optional[str] = None,
-    system_prompt: Optional[str] = None,
     SetVar=None,
     PrintException=None
 ):
@@ -25,7 +24,6 @@ def generate_text(
         temperature: Temperatura para la generación (entre 0 y 1).
         max_tokens: Número máximo de tokens a generar.
         stop_sequence: Secuencia opcional para detener la generación.
-        system_prompt: Prompt del sistema para dar contexto o instrucciones al modelo.
         SetVar: Función para establecer variables en Rocketbot.
         PrintException: Función para imprimir excepciones en Rocketbot.
     """
@@ -69,28 +67,15 @@ def generate_text(
             raise Exception(error_msg)
 
         # Preparar los mensajes
-        messages = []
-        
-        # Agregar mensaje del sistema si existe
-        if system_prompt:
-            messages.append({
-                "role": "system",
-                "content": system_prompt
-            })
-            
-        # Agregar el prompt del usuario
-        messages.append({
-            "role": "user",
-            "content": prompt
-        })
+        messages = [
+            {"role": "user", "content": prompt}
+        ]
 
         print("\nGeneration parameters:")
         print(f"- Model: {model}")
         print(f"- Temperature: {temp}")
         print(f"- Maximum tokens: {max_tok}")
         print(f"- Stop sequences: {stop_sequences}")
-        if system_prompt:
-            print(f"- System prompt: {system_prompt[:100]}..." if len(system_prompt) > 100 else system_prompt)
         
         # Validar tokens antes de generar
         try:
