@@ -1,0 +1,360 @@
+{
+  "name": "ClaudeAI",
+  "version": "1.0.0",
+  "author": "Pedro Dresch",
+  "license": "MIT",
+  "description": "Module to interact with ClaudeAI models from Rocketbot.",
+  "description_lang": {
+    "es": "Módulo para interactuar con los modelos de ClaudeAI desde Rocketbot.",
+    "en": "Module to interact with ClaudeAI models from Rocketbot.",
+    "pr": "Módulo para interagir com os modelos do ClaudeAI a partir do Rocketbot."
+  },
+  "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+  "homepage": "https://rocketbot.com",
+  "linux": true,
+  "windows": true,
+  "mac": true,
+  "docker": false,
+  "dependencies": {
+    "anthropic": "1.8.2"
+  },
+  "title": {
+    "es": "ClaudeAI",
+    "en": "ClaudeAI",
+    "pr": "ClaudeAI"
+  },
+  "children": [
+    {
+      "en": {
+        "title": "Connect to ClaudeAI",
+        "description": "Establish connection to ClaudeAI",
+        "title_options": "Select Option",
+        "options": null
+      },
+      "es": {
+        "title": "Conectar con ClaudeAI",
+        "description": "Establece conexión con ClaudeAI",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "pr": {
+        "title": "Conectar com ClaudeAI",
+        "description": "Estabelece conexão com ClaudeAI",
+        "title_options": "Selecione uma opção",
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "gsk_abc123...",
+              "en": "gsk_abc123...",
+              "pr": "gsk_abc123..."
+            },
+            "title": {
+              "es": "API Key:",
+              "en": "API Key:",
+              "pr": "API Key:"
+            },
+            "description": {
+              "es": "Clave API de tu cuenta de ClaudeAI",
+              "en": "Your ClaudeAI API key",
+              "pr": "Sua chave de API do ClaudeAI"
+            },
+            "id": "api_key",
+            "css": "col-md-6",
+            "required": true
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "resultadoClaudeAI",
+              "en": "ClaudeAIResult",
+              "pr": "resultadoClaudeAI"
+            },
+            "title": {
+              "es": "Asignar a variable:",
+              "en": "Assign to variable:",
+              "pr": "Atribuir à variável:"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se guardará la conexión",
+              "en": "Variable name to store the connection",
+              "pr": "Nome da variável para armazenar a conexão"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "result_var",
+            "css": "col-md-6",
+            "remove_vars": true,
+            "required": true
+          }
+        ]
+      },
+      "module": "connect",
+      "module_name": "ClaudeAI",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": false
+    },
+    {
+      "en": {
+        "title": "Get Models",
+        "description": "Retrieve available models from ClaudeAI",
+        "title_options": "Select Option",
+        "options": null
+      },
+      "es": {
+        "title": "Obtener Modelos",
+        "description": "Recupera los modelos disponibles de ClaudeAI",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "pr": {
+        "title": "Obter Modelos",
+        "description": "Recupera os modelos disponíveis do ClaudeAI",
+        "title_options": "Selecione uma opção",
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "resultadoModelos",
+              "en": "modelsResult",
+              "pr": "resultadoModelos"
+            },
+            "title": {
+              "es": "Asignar a variable:",
+              "en": "Assign to variable:",
+              "pr": "Atribuir à variável:"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se guardará la lista de modelos",
+              "en": "Variable name to store the list of models",
+              "pr": "Nome da variável para armazenar a lista de modelos"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "result_var",
+            "css": "col-md-6",
+            "remove_vars": true,
+            "required": true
+          }
+        ]
+      },
+      "module": "get_models",
+      "module_name": "ClaudeAI",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": false
+    },
+    {
+      "en": {
+        "title": "Generate Text",
+        "description": "Generate text using ClaudeAI",
+        "title_options": "Select Option",
+        "options": null
+      },
+      "es": {
+        "title": "Generar Texto",
+        "description": "Genera texto utilizando ClaudeAI",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "pr": {
+        "title": "Gerar Texto",
+        "description": "Gera texto usando o ClaudeAI",
+        "title_options": "Selecione uma opção",
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "textarea",
+            "placeholder": {
+              "es": "Qué es Rocketbot?",
+              "en": "What is Rocketbot?",
+              "pr": "O que é Rocketbot?"
+            },
+            "title": {
+              "es": "Prompt:",
+              "en": "Prompt:",
+              "pr": "Prompt:"
+            },
+            "description": {
+              "es": "Texto de entrada para generar texto",
+              "en": "Input text to generate text",
+              "pr": "Texto de entrada para gerar texto"
+            },
+            "id": "prompt",
+            "css": "col-md-12",
+            "required": true
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "compound-beta-mini",
+              "en": "compound-beta-mini",
+              "pr": "compound-beta-mini"
+            },
+            "title": {
+              "es": "Modelo:",
+              "en": "Model:",
+              "pr": "Modelo:"
+            },
+            "description": {
+              "es": "ID del modelo a utilizar",
+              "en": "ID of the model to use",
+              "pr": "ID do modelo a ser usado"
+            },
+            "help": {
+              "es": "Por ejemplo: compound-beta-mini",
+              "en": "For example: compound-beta-mini",
+              "pr": "Por exemplo: compound-beta-mini"
+            },
+            "id": "model",
+            "css": "col-md-6",
+            "required": true
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "0.8",
+              "en": "0.8",
+              "pr": "0.8"
+            },
+            "title": {
+              "es": "Temperatura (opcional):",
+              "en": "Temperature (optional):",
+              "pr": "Temperatura (opcional):"
+            },
+            "description": {
+              "es": "Controla la aleatoriedad de la generación de texto (0.0 a 2)",
+              "en": "Controls the randomness of text generation (0.0 a 2)",
+              "pr": "Controla a aleatoriedade da geração de texto (0.0 a 2)"
+            },
+            "help": {
+              "es": "Valores más altos generan texto más diverso.",
+              "en": "Higher values generate more diverse text.",
+              "pr": "Valores mais altos geram texto mais diverso."
+            },
+            "id": "temperature",
+            "css": "col-md-6",
+            "required": false
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "100",
+              "en": "100",
+              "pr": "100"
+            },
+            "title": {
+              "es": "Máximo de tokens (opcional):",
+              "en": "Maximum tokens (optional):",
+              "pr": "Máximo de tokens (opcional):"
+            },
+            "description": {
+              "es": "Número máximo de tokens a generar",
+              "en": "Maximum number of tokens to generate",
+              "pr": "Número máximo de tokens a serem gerados"
+            },
+            "help": {
+              "es": "Limita la longitud de la respuesta generada.",
+              "en": "Limits the length of the generated response.",
+              "pr": "Limita o comprimento da resposta gerada."
+            },
+            "id": "max_tokens",
+            "css": "col-md-6",
+            "required": false
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "herramienta RPA",
+              "en": "RPA tool",
+              "pr": "ferramenta RPA"
+            },
+            "title": {
+              "es": "Secuencia de parada (opcional):",
+              "en": "Stop sequence (optional):",
+              "pr": "Sequência de parada (opcional):"
+            },
+            "description": {
+              "es": "Secuencia opcional para detener la generación de texto",
+              "en": "Optional sequence to stop text generation",
+              "pr": "Sequência opcional para parar a geração de texto"
+            },
+            "help": {
+              "es": "Detener la generación si se detecta este texto.",
+              "en": "Stop generation if this text is detected.",
+              "pr": "Parar a geração se este texto for detectado."
+            },
+            "id": "stop_sequence",
+            "css": "col-md-6",
+            "required": false
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "resultadoTexto",
+              "en": "textResult",
+              "pr": "resultadoTexto"
+            },
+            "title": {
+              "es": "Asignar a variable:",
+              "en": "Assign to variable:",
+              "pr": "Atribuir à variável:"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se guardará el texto generado",
+              "en": "Variable name to store the generated text",
+              "pr": "Nome da variável para armazenar o texto gerado"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "result_var",
+            "css": "col-md-6",
+            "remove_vars": true,
+            "required": true
+          }
+        ]
+      },
+      "module": "generate_text",
+      "module_name": "ClaudeAI",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": false
+    }
+  ]
+}
