@@ -218,9 +218,9 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "compound-beta-mini",
-              "en": "compound-beta-mini",
-              "pr": "compound-beta-mini"
+              "es": "claude-3-5-sonnet-20240620",
+              "en": "claude-3-5-sonnet-20240620",
+              "pr": "claude-3-5-sonnet-20240620"
             },
             "title": {
               "es": "Modelo:",
@@ -233,9 +233,9 @@
               "pr": "ID do modelo a ser usado"
             },
             "help": {
-              "es": "Por ejemplo: compound-beta-mini",
-              "en": "For example: compound-beta-mini",
-              "pr": "Por exemplo: compound-beta-mini"
+              "es": "Por ejemplo: claude-3-5-sonnet-20240620",
+              "en": "For example: claude-3-5-sonnet-20240620",
+              "pr": "Por exemplo: claude-3-5-sonnet-20240620"
             },
             "id": "model",
             "css": "col-md-6",
