@@ -1,16 +1,22 @@
 # Variable global para almacenar la conexión
-mod_model_claude = None
+claude_client = None
 
-def set_client(client):
+def set_claude_client(client):
     """
-    Establece el cliente global de claude.
+    Establece el cliente global de ClaudeAI.
+    
+    Args:
+        client: Cliente de Anthropic inicializado
     """
-    global mod_model_claude
-    mod_model_claude = client
+    global claude_client
+    claude_client = client
 
-def get_client():
+def get_claude_client():
     """
-    Obtiene el cliente global de claude.
+    Obtiene el cliente global de ClaudeAI.
+    
+    Returns:
+        El cliente de Anthropic o None si no está inicializado
     """
-    global mod_model_claude
-    return mod_model_claude
+    global claude_client
+    return claude_client

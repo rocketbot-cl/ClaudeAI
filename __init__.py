@@ -12,15 +12,14 @@ Para modificar variables en Rocketbot:
     SetVar("nombre_variable", valor)
 
 Para instalar el SDK:
-    pip install ClaudeAI -t libs
+    pip install anthropic -t libs
 """
 
 import os
 import sys
 
 base_path = tmp_global_obj["basepath"]  # type: ignore
-cur_path = base_path + 'modules' + os.sep + \
-    'ClaudeAI' + os.sep + 'scripts' + os.sep
+cur_path = base_path + 'modules' + os.sep + 'ClaudeAI' + os.sep + 'scripts' + os.sep
 libs_path = base_path + 'modules' + os.sep + 'ClaudeAI' + os.sep + 'libs' + os.sep
 GetParams = GetParams  # type: ignore
 SetVar = SetVar  # type: ignore
@@ -35,15 +34,15 @@ if libs_path not in sys.path:
 
 module = GetParams("module")
 
-from generate_text import generate_text  # type: ignore
+from conect_anthropic import connect_to_anthropic  # type: ignore
 from get_models import get_models  # type: ignore
-from conect_claude import connect_to_claude  # type: ignore
+from generate_text import generate_text  # type: ignore
 
 try:
     if module == "connect":
         api_key = GetParams("api_key")
         result_var = GetParams("result_var")
-        connect_to_claude(api_key, result_var, SetVar, PrintException)
+        connect_to_anthropic(api_key, result_var, SetVar, PrintException)
 
     elif module == "get_models":
         result_var = GetParams("result_var")
@@ -60,6 +59,7 @@ try:
         # Renombrado para coincidir con la API
         max_completion_tokens = GetParams("max_tokens")
         stop_sequence = GetParams("stop_sequence")
+        system_prompt = GetParams("system_prompt")  # Nuevo parámetro
 
         generate_text(
             prompt=prompt,
@@ -69,6 +69,7 @@ try:
             # Pasamos el parámetro con el nombre antiguo por compatibilidad
             max_tokens=max_completion_tokens,
             stop_sequence=stop_sequence,
+            system_prompt=system_prompt,  # Pasamos el nuevo parámetro
             SetVar=SetVar,
             PrintException=PrintException
         )
