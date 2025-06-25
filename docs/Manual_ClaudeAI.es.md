@@ -8,7 +8,7 @@ Módulo para interactuar con los modelos de ClaudeAI desde Rocketbot.
 
 *Read this in other languages: [English](Manual_ClaudeAI.md), [Português](Manual_ClaudeAI.pr.md), [Español](Manual_ClaudeAI.es.md)*
   
-![banner](imgs/Banner_ClaudeAI.png o jpg)
+![banner](imgs/Banner_ClaudeAI.jpg)
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
