@@ -359,6 +359,174 @@
       "windows": true,
       "mac": true,
       "docker": false
+    },
+    {
+      "en": {
+        "title": "Process Document",
+        "description": "Process a document or image using ClaudeAI",
+        "title_options": "Select Option",
+        "options": null
+      },
+      "es": {
+        "title": "Procesar Documento",
+        "description": "Procesa un documento o imagen utilizando ClaudeAI",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "pr": {
+        "title": "Processar Documento",
+        "description": "Processa um documento ou imagem usando o ClaudeAI",
+        "title_options": "Selecione uma opção",
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "textarea",
+            "placeholder": {
+              "es": "Describe este documento",
+              "en": "Describe this document",
+              "pr": "Descreva este documento"
+            },
+            "title": {
+              "es": "Prompt:",
+              "en": "Prompt:",
+              "pr": "Prompt:"
+            },
+            "description": {
+              "es": "Texto de entrada para procesar con el documento",
+              "en": "Input text to process with the document",
+              "pr": "Texto de entrada para processar com o documento"
+            },
+            "id": "prompt",
+            "css": "col-md-12",
+            "required": true
+          },
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:/Users/Usuario/Desktop/test.png",
+              "en": "C:/Users/User/Desktop/test.png",
+              "pr": "C:/Users/Usuário/Desktop/test.png"
+            },
+            "title": {
+              "es": "Archivo a procesar:",
+              "en": "File to process:",
+              "pr": "Arquivo a processar:"
+            },
+            "description": {
+              "es": "Seleccione el archivo a procesar",
+              "en": "Select the file to process",
+              "pr": "Selecione o arquivo para carregar"
+            },
+            "id": "file_path",
+            "css": "col-md-12",
+            "required": true
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "claude-3-5-sonnet-20240620",
+              "en": "claude-3-5-sonnet-20240620",
+              "pr": "claude-3-5-sonnet-20240620"
+            },
+            "title": {
+              "es": "Modelo:",
+              "en": "Model:",
+              "pr": "Modelo:"
+            },
+            "description": {
+              "es": "ID del modelo a utilizar",
+              "en": "ID of the model to use",
+              "pr": "ID do modelo a ser usado"
+            },
+            "help": {
+              "es": "Por ejemplo: claude-3-5-sonnet-20240620",
+              "en": "For example: claude-3-5-sonnet-20240620",
+              "pr": "Por exemplo: claude-3-5-sonnet-20240620"
+            },
+            "id": "model",
+            "css": "col-md-6",
+            "required": true
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "0.8",
+              "en": "0.8",
+              "pr": "0.8"
+            },
+            "title": {
+              "es": "Temperatura (opcional):",
+              "en": "Temperature (optional):",
+              "pr": "Temperatura (opcional):"
+            },
+            "description": {
+              "es": "Controla la aleatoriedad de la generación (0.0 a 2)",
+              "en": "Controls the randomness of generation (0.0 a 2)",
+              "pr": "Controla a aleatoriedade da geração (0.0 a 2)"
+            },
+            "id": "temperature",
+            "css": "col-md-6",
+            "required": false
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "100",
+              "en": "100",
+              "pr": "100"
+            },
+            "title": {
+              "es": "Máximo de tokens (opcional):",
+              "en": "Maximum tokens (optional):",
+              "pr": "Máximo de tokens (opcional):"
+            },
+            "description": {
+              "es": "Número máximo de tokens a generar",
+              "en": "Maximum number of tokens to generate",
+              "pr": "Número máximo de tokens a serem gerados"
+            },
+            "id": "max_tokens",
+            "css": "col-md-6",
+            "required": false
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "resultadoDocumento",
+              "en": "documentResult",
+              "pr": "resultadoDocumento"
+            },
+            "title": {
+              "es": "Asignar a variable:",
+              "en": "Assign to variable:",
+              "pr": "Atribuir à variável:"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se guardará el resultado",
+              "en": "Variable name to store the result",
+              "pr": "Nome da variável para armazenar o resultado"
+            },
+            "id": "result_var",
+            "css": "col-md-6",
+            "remove_vars": true,
+            "required": true
+          }
+        ]
+      },
+      "module": "process_document",
+      "icon": "data:image/png;base64,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",
+      "module_name": "ClaudeAI",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": false
     }
   ]
 }
