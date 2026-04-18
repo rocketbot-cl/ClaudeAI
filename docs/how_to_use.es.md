@@ -49,7 +49,16 @@ Una vez que tenga su clave API y créditos disponibles, puede usar el módulo de
      - System Prompt: instrucciones o contexto general para el modelo
      - Stop Sequence: texto que detendrá la generación
 
-3. **Consultar Modelos Disponibles**:
+3. **Procesar Documento**:
+   - Use el comando "Process Document"
+   - Ingrese el prompt indicando qué desea extraer/analizar
+   - Seleccione el archivo a procesar
+   - Seleccione el modelo a usar (por ejemplo, claude-3-5-sonnet-20240620)
+   - Configure los parámetros opcionales si lo desea:
+     - Temperature (0-1): controla la creatividad de las respuestas
+     - Max Tokens: límite de tokens para la respuesta
+
+4. **Consultar Modelos Disponibles**:
    - Use el comando "Get Available Models"
    - Verá una lista de los modelos que puede usar con su cuenta
 

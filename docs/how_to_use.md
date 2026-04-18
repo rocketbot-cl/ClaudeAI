@@ -49,7 +49,16 @@ Once you have your API key and available credits, you can use the module as foll
      - System Prompt: general instructions or context for the model
      - Stop Sequence: text that will stop generation
 
-3. **Query Available Models**:
+3. **Process Document**:
+   - Use the "Process Document" command
+   - Enter the prompt that explains what you want to extract/analyze
+   - Select the file to process
+   - Select the model to use (e.g., claude-3-5-sonnet-20240620)
+   - Configure optional parameters if desired:
+     - Temperature (0-1): controls response creativity
+     - Max Tokens: response token limit
+
+4. **Query Available Models**:
    - Use the "Get Available Models" command
    - You'll see a list of models you can use with your account
 

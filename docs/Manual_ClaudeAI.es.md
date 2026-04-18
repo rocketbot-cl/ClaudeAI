@@ -3,17 +3,17 @@
 
 
 # ClaudeAI
-  
-Módulo para interactuar con los modelos de ClaudeAI desde Rocketbot.  
+
+Módulo para interactuar con los modelos de ClaudeAI desde Rocketbot.
 
 *Read this in other languages: [English](Manual_ClaudeAI.md), [Português](Manual_ClaudeAI.pr.md), [Español](Manual_ClaudeAI.es.md)*
-  
+
 ![banner](imgs/Banner_ClaudeAI.jpg)
 ## Como instalar este módulo
-  
+
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
-2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
+2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.
 
 ## Cómo usar este módulo
 
@@ -68,7 +68,16 @@ Una vez que tenga su clave API y créditos disponibles, puede usar el módulo de
 - System Prompt: instrucciones o contexto general para el modelo
      - Stop Sequence: texto que detendrá la generación
 
-3. **Consultar Modelos Disponibles**:
+3. **Procesar Documento**:
+   - Use el comando "Process Document"
+   - Ingrese el prompt indicando qué desea extraer/analizar
+   - Seleccione el archivo a procesar
+   - Seleccione el modelo a usar (por ejemplo, claude-3-5-sonnet-20240620)
+   - Configure los parámetros opcionales si lo desea:
+     - Temperature (0-1): controla la creatividad de las respuestas
+     - Max Tokens: límite de tokens para la respuesta
+
+4. **Consultar Modelos Disponibles**:
    - Use el comando "Get Available Models"
    - Verá una lista de los modelos que puede usar con su cuenta
 
@@ -79,12 +88,14 @@ Una vez que tenga su clave API y créditos disponibles, puede usar el módulo de
 - Use el modelo más apropiado para su caso de uso:
   - claude-3-opus: mayor capacidad y precisión
   - claude-3-sonnet: buen balance entre rendimiento y costo
-- Configure el system prompt para obtener respuestas más consistentes
+- Configure el system prompt para obtener 
+respuestas más consistentes
 - Ajuste la temperatura según necesite respuestas más precisas (0) o creativas (1)
+
 ## Descripción de los comandos
 
 ### Conectar con ClaudeAI
-  
+
 Establece conexión con ClaudeAI
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -92,20 +103,32 @@ Establece conexión con ClaudeAI
 |Asignar a variable|Nombre de la variable donde se guardará la conexión|resultadoClaudeAI|
 
 ### Obtener Modelos
-  
+
 Recupera los modelos disponibles de ClaudeAI
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Asignar a variable|Nombre de la variable donde se guardará la lista de modelos|resultadoModelos|
 
 ### Generar Texto
-  
+
 Genera texto utilizando ClaudeAI
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Prompt|Texto de entrada para generar texto|Qué es Rocketbot?|
-|Modelo|ID del modelo a utilizar|compound-beta-mini|
+|Modelo|ID del modelo a utilizar|claude-3-5-sonnet-20240620|
 |Temperatura (opcional)|Controla la aleatoriedad de la generación de texto (0.0 a 2)|0.8|
 |Máximo de tokens (opcional)|Número máximo de tokens a generar|100|
 |Secuencia de parada (opcional)|Secuencia opcional para detener la generación de texto|herramienta RPA|
 |Asignar a variable|Nombre de la variable donde se guardará el texto generado|resultadoTexto|
+
+### Procesar Documento
+
+Procesa un documento o imagen utilizando ClaudeAI
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Prompt|Texto de entrada para procesar con el documento|Describe este documento|
+|Archivo a procesar|Seleccione el archivo a procesar|C:/Users/Usuario/Desktop/test.png|
+|Modelo|ID del modelo a utilizar|claude-3-5-sonnet-20240620|
+|Temperatura (opcional)|Controla la aleatoriedad de la generación (0.0 a 2)|0.8|
+|Máximo de tokens (opcional)|Número máximo de tokens a generar|100|
+|Asignar a variable|Nombre de la variable donde se guardará el resultado|resultadoDocumento|

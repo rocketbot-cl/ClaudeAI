@@ -3,17 +3,17 @@
 
 
 # ClaudeAI
-  
-Module to interact with ClaudeAI models from Rocketbot.  
+
+Module to interact with ClaudeAI models from Rocketbot.
 
 *Read this in other languages: [English](Manual_ClaudeAI.md), [Português](Manual_ClaudeAI.pr.md), [Español](Manual_ClaudeAI.es.md)*
-  
+
 ![banner](imgs/Banner_ClaudeAI.jpg)
 ## How to install this module
-  
+
 To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
-2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.
 
 ## How to use this module
 
@@ -67,9 +67,18 @@ Once you have your API key and available credits, you can use the module as foll
      - System Prompt: general instructions or context for the model
      - Stop Sequence: text that will stop generation
 
-3. **Query Available Models**:
-   - Use the "Get Available Models" command
+3. **Process Document**:
+   - Use the "Process Document" command
+   - 
+Enter the prompt that explains what you want to extract/analyze
+   - Select the file to process
+   - Select the model to use (e.g., claude-3-5-sonnet-20240620)
+   - Configure optional parameters if desired:
+     - Temperature (0-1): controls response creativity
+     - Max Tokens: response token limit
 
+4. **Query Available Models**:
+   - Use the "Get Available Models" command
    - You'll see a list of models you can use with your account
 
 ### Recommendations
@@ -81,10 +90,11 @@ Once you have your API key and available credits, you can use the module as foll
   - claude-3-sonnet: good balance between performance and cost
 - Configure the system prompt to get more consistent responses
 - Adjust temperature based on whether you need more precise (0) or creative (1) responses
+
 ## Description of the commands
 
 ### Connect to ClaudeAI
-  
+
 Establish connection to ClaudeAI
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -92,20 +102,32 @@ Establish connection to ClaudeAI
 |Assign to variable|Variable name to store the connection|ClaudeAIResult|
 
 ### Get Models
-  
+
 Retrieve available models from ClaudeAI
 |Parameters|Description|example|
 | --- | --- | --- |
 |Assign to variable|Variable name to store the list of models|modelsResult|
 
 ### Generate Text
-  
+
 Generate text using ClaudeAI
 |Parameters|Description|example|
 | --- | --- | --- |
 |Prompt|Input text to generate text|What is Rocketbot?|
-|Model|ID of the model to use|compound-beta-mini|
+|Model|ID of the model to use|claude-3-5-sonnet-20240620|
 |Temperature (optional)|Controls the randomness of text generation (0.0 a 2)|0.8|
 |Maximum tokens (optional)|Maximum number of tokens to generate|100|
 |Stop sequence (optional)|Optional sequence to stop text generation|RPA tool|
 |Assign to variable|Variable name to store the generated text|textResult|
+
+### Process Document
+
+Process a document or image using ClaudeAI
+|Parameters|Description|example|
+| --- | --- | --- |
+|Prompt|Input text to process with the document|Describe this document|
+|File to process|Select the file to process|C:/Users/User/Desktop/test.png|
+|Model|ID of the model to use|claude-3-5-sonnet-20240620|
+|Temperature (optional)|Controls the randomness of generation (0.0 a 2)|0.8|
+|Maximum tokens (optional)|Maximum number of tokens to generate|100|
+|Assign to variable|Variable name to store the result|documentResult|
