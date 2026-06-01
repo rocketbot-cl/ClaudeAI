@@ -37,6 +37,7 @@ module = GetParams("module")
 from conect_anthropic import connect_to_anthropic  # type: ignore
 from get_models import get_models  # type: ignore
 from generate_text import generate_text  # type: ignore
+from process_document import process_document # type: ignore
 
 try:
     if module == "connect":
@@ -63,6 +64,25 @@ try:
             temperature=temperature,
             max_tokens=max_completion_tokens,
             stop_sequence=stop_sequence,
+            SetVar=SetVar,
+            PrintException=PrintException
+        )
+
+    elif module == "process_document":
+        prompt = GetParams("prompt")
+        file_path = GetParams("file_path")
+        model = GetParams("model")
+        result_var = GetParams("result_var")
+        temperature = GetParams("temperature")
+        max_completion_tokens = GetParams("max_tokens")
+
+        process_document(
+            prompt=prompt,
+            file_path=file_path,
+            model=model,
+            result_var=result_var,
+            temperature=temperature,
+            max_tokens=max_completion_tokens,
             SetVar=SetVar,
             PrintException=PrintException
         )
